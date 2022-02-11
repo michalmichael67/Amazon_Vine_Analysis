@@ -8,6 +8,7 @@ We used PySpark to load and clean an Amazon Review dataset and then connected to
 
 ## Results
 - How many Vine reviews and non-Vine reviews were there?
+    
     To answer this question we followed a few steps:
     1.  We split the initial watch dataframe into 2 dataframes by the "vine" column which indicated Y (participating in program) or N (not participating in program)
     ![vine_program.png](Resources/vine_program.png) 
@@ -17,15 +18,17 @@ We used PySpark to load and clean an Amazon Review dataset and then connected to
     **There are a total of 47 vine reviewers and 8,362 non-vine reviewers.**
 
 - How many Vine reviews were 5 stars? How many non-Vine reviews were 5 stars?
+    
     To find the number of 5 star reviews for each category, the following lines of code were run: 
     1. paid_five_star_reviews = vine_paid.filter(vine_paid["star_rating"] == 5).count() 
     2. unpaid_five_star_reviews = vine_unpaid.filter(vine_unpaid["star_rating"] == 5).count() 
 
-    ![5_star_count.png](Resources/5_star_count.png) 
+    ![5_star_review_count.png](Resources/5_star_review_count.png) 
 
     **There are a total of 15 5-star vine reviewers and 4,332 5-star non-vine reviewers.**
 
 - What percentage of Vine reviews were 5 stars? What percentage of non-Vine reviews were 5 stars?
+    
     To find the percentage of 5 star reviews for each category, the following steps were taken: 
     1. Find the total number of paid and unpaid 5 star reviews by filtering the star rating column. 
     2. Find the total number of paid and unpaid reviews 
